@@ -1,0 +1,15 @@
+class Solution(object):
+    def fib(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        a = 0
+        b = 1
+        for i in range(n):
+            a, b = b, a+b
+        return a
+
+if __name__ == '__main__':
+    s = Solution()
+    print(s.fib(4))
