@@ -14,6 +14,18 @@ def partition(nums: list[int], left: int, right: int) -> int:
     return i  # 返回基准数的索引
 
 
+def quick_sort(nums: list[int], left: int, right: int):
+    """快速排序"""
+    # 子数组长度为 1 时终止递归
+    if left >= right:
+        return
+    # 哨兵划分
+    pivot = partition(nums, left, right)
+    # 递归左子数组、右子数组
+    quick_sort(nums, left, pivot - 1)
+    quick_sort(nums, pivot + 1, right)
+
+
 if __name__ == '__main__':
-    nums = [4, 1, 3, 1, 5, 2]
-    partition(nums, 0, len(nums) - 1)
+    nums = [9, 4, 3, 1, 5, 2]
+    quick_sort(nums, 0, len(nums) - 1)
