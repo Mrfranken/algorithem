@@ -7,28 +7,19 @@ class TreeNode(object):
 
 
 class Solution(object):
-    def __init__(self):
-        self.res = []
-
-    def preorderTraversal(self, root):
+    def maxDepth(self, root):
         """
         :type root: TreeNode
-        :rtype: List[int]
+        :rtype: int
         """
-        self._preorderTraversal(root)
-        return self.res
+        return self._preorderTraversal(root)
 
     def _preorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
         if not root:
             return 0
-        print(root.val)
-        self.res.append(root.val)
-        left_height = self._preorderTraversal(root.left)
-        right_height = self._preorderTraversal(root.right)
+        left = self._preorderTraversal(root.left)
+        right = self._preorderTraversal(root.right)
+        return 1 + max(left, right)
 
 
 if __name__ == '__main__':
@@ -37,4 +28,4 @@ if __name__ == '__main__':
     root.right = TreeNode(20)
     root.right.left = TreeNode(15)
     root.right.right = TreeNode(7)
-    print(Solution().preorderTraversal(root))
+    print(Solution().maxDepth(root))
