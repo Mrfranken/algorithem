@@ -8,8 +8,8 @@ class Solution(object):
     def dailyTemperatures(self, temperatures):
         res = [0] * len(temperatures)
         stack = []
-        for i, temperature in enumerate(temperatures):
-            while stack and temperatures[stack[-1]] < temperature:
+        for i in range(len(temperatures)):
+            while stack and temperatures[stack[-1]] < temperatures[i]:
                 index = stack.pop()
                 res[index] = i - index
             stack.append(i)
