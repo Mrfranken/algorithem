@@ -24,6 +24,6 @@ class Solution(object):
 if __name__ == '__main__':
     s = Solution()
     nums = [-2, -1, -1, 1, 2, 3]
-    nums = [-3, -2, -1, 0, 0, 1, 2]
     nums = [5, 20, 66, 1314]
+    nums = [-3, -2, -1, 0, 0, 1, 2]
     print(s.maximumCount(nums))

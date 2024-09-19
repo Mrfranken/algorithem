@@ -29,3 +29,4 @@ def quick_sort(nums: list[int], left: int, right: int):
 if __name__ == '__main__':
     nums = [9, 4, 3, 1, 5, 2]
     quick_sort(nums, 0, len(nums) - 1)
+    print(nums)

@@ -21,6 +21,25 @@ class Solution(object):
         right = self._preorderTraversal(root.right)
         return 1 + max(left, right)
 
+    def max_depth_used_iterable(self, root):
+        """
+        迭代法
+        """
+        max_depth = 1
+        res = []
+        stack = [(root, max_depth)]
+        while stack:
+            node, depth = stack.pop()
+            res.append(node.val)
+            max_depth = max(max_depth, depth)
+
+            if node.right:
+                stack.append((node.right, max_depth + 1))
+
+            if node.left:
+                stack.append((node.left, max_depth + 1))
+        return max_depth
+
 
 if __name__ == '__main__':
     root = TreeNode(3)
@@ -29,3 +48,4 @@ if __name__ == '__main__':
     root.right.left = TreeNode(15)
     root.right.right = TreeNode(7)
     print(Solution().maxDepth(root))
+    print(Solution().max_depth_used_iterable(root))

@@ -11,7 +11,6 @@ class MyQueue(object):
 
         self.sort_list.append(x)
 
-        self.sort_list.append(x)
         for item in self.sort_list:
             self.reverse_list.append(self.sort_list.pop)
 

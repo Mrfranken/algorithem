@@ -10,6 +10,7 @@ class Solution(object):
         """
         dp = [[0] * (cap + 1) for _ in range(len(strs) + 1)]
         for s in strs:
+            pass
 
     def counter(self, s):
         counter = Counter(s)

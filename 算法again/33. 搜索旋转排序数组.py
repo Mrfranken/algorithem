@@ -10,6 +10,7 @@ class Solution(object):
         然后如果target在mid和right之间，则右移left到mid +1
            如果不在，则左移right到mid
     """
+
     def search(self, nums, target):
         """
         :type nums: List[int]
@@ -32,4 +33,10 @@ class Solution(object):
                     left = mid + 1
                 else:
                     right = mid
-        return left if nums[left] == target else -1
+        return left if nums[left] == 0 else -1
+
+
+if __name__ == '__main__':
+    s = Solution()
+    nums = [4, 5, 6, 7, 0, 1, 2]
+    print(s.search(nums, 4))

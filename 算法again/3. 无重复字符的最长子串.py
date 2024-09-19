@@ -8,10 +8,14 @@ class Solution(object):
         left = 0
         ans = 0
         for index, letter in enumerate(s):
-            cur_length = index + 1
             while letter in window:
                 window.remove(s[left])
                 left += 1
             window.add(letter)
             ans = max(ans, len(window))
         return ans
+
+
+if __name__ == '__main__':
+    s = "abcabcbb"
+    print(Solution().lengthOfLongestSubstring(s))

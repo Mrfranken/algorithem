@@ -30,9 +30,9 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    nums = [2, 6, 4, 8, 10, 9, 15]
     nums = [1, 2, 3, 4]
     nums = [1, 3, 2, 3, 3]
     nums = [1, 2, 3, 3, 3]
+    nums = [2, 6, 4, 8, 10, 9, 15]
     nums = [1, 3, 2, 2, 2]
     print(s.findUnsortedSubarray(nums))
